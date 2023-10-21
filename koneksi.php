@@ -1,6 +1,6 @@
 <?php 
 $databaseHost = 'localhost';
-$databaseName = 'polik';
+$databaseName = 'kegiatan';
 $databaseUsername = 'root';
 $databasePassword = '';
 
@@ -9,3 +9,4 @@ $mysqli = mysqli_connect($databaseHost, $databaseUsername,
     if (!$mysqli) {
         die("Koneksi gagal: " . mysqli_connect_error());
     }
+    

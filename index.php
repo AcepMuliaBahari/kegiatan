@@ -1,8 +1,6 @@
-<?php
-include_once("koneksi.php");
-
-
-?>
+    <?php
+    include_once("koneksi.php");
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +27,12 @@ include_once("koneksi.php");
     <small class="text-muted">
         Kegiatan
     </small>
-</h3>
-<hr> 
+    </h3>
+    <hr> 
     </div>
     <div class="container">
-        <!--Form Input Data-->
-
+   
+    <!--Form Input Data-->
 <form class="form row" method="POST" action="" name="myForm" onsubmit="return(validate());">
     <!-- Kode php untuk menghubungkan form dengan database -->
     <?php
@@ -60,19 +58,19 @@ include_once("koneksi.php");
         <label for="inputIsi" class="form-label fw-bold">
             Kegiatan
         </label>
-        <input type="text" class="form-control" name="isi" id="inputIsi" placeholder="Kegiatan" value="<?php echo $isi ?>">
+        <input required type="text" class="form-control" name="isi" id="inputIsi" placeholder="Kegiatan" value="<?php echo $isi ?>">
     </div>
     <div class="col">
         <label for="inputTanggalAwal" class="form-label fw-bold">
             Tanggal Awal
         </label>
-        <input type="date" class="form-control" name="tgl_awal" id="inputTanggalAwal" placeholder="Tanggal Awal" value="<?php echo $tgl_awal ?>">
+        <input required type="date" class="form-control" name="tgl_awal" id="inputTanggalAwal" placeholder="Tanggal Awal" value="<?php echo $tgl_awal ?>">
     </div>
     <div class="col mb-2">
         <label for="inputTanggalAkhir" class="form-label fw-bold">
         Tanggal Akhir
         </label>
-        <input type="date" class="form-control" name="tgl_akhir" id="inputTanggalAkhir" placeholder="Tanggal Akhir" value="<?php echo $tgl_akhir ?>">
+        <input required type="date" class="form-control" name="tgl_akhir" id="inputTanggalAkhir" placeholder="Tanggal Akhir" value="<?php echo $tgl_akhir ?>">
     </div>
     
         <button type="submit" class="btn btn-primary rounded-pill px-3" name="simpan">Simpan</button>
@@ -115,14 +113,14 @@ include_once("koneksi.php");
                     <?php
                     if ($data['status'] == '1') {
                     ?>
-                        <a class="btn btn-success rounded-pill px-3" type="button" 
+                        <a class="btn btn-warning rounded-pill px-3" type="button" 
                         href="index.php?id=<?php echo $data['id'] ?>&aksi=ubah_status&status=0">
                         Sudah
                         </a>
                     <?php
                     } else {
                     ?>
-                        <a class="btn btn-warning rounded-pill px-3" type="button" 
+                        <a class="btn btn-danger rounded-pill px-3" type="button" 
                         href="index.php?id=<?php echo $data['id'] ?>&aksi=ubah_status&status=1">
                         Belum</a>
                     <?php
@@ -147,7 +145,7 @@ include_once("koneksi.php");
 
 
 
-    <!-- Code fungsi untuk ubah, tambah, status, hapus -->
+    <!-- Code fungsi untuk  simpan, tambah ubah,  ubah status, hapus -->
     <?php
 if (isset($_POST['simpan'])) {
     if (isset($_POST['id'])) {
@@ -207,18 +205,6 @@ if (isset($_GET['aksi'])) {
         }
     }
 }
-
-
-    
-
-
-
-
-
-
 ?>
-
-
-
 </body>
 </html>
